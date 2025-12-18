@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Test Input</title>
-</head>
-<body>
-    <h1>test</h1>
-    <input class="test" type="text" placeholder="Tape ici...">
-    <button>Envoyer</button>
-
-    <script>
         const input = document.querySelector('.test');
         const button = document.querySelector('button');
 
@@ -45,6 +34,3 @@
                 alert('❌ Problème connexion');
             }
         });
-    </script>
-</body>
-</html>
