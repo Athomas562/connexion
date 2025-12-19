@@ -5,35 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      section{
-        display:flex;
+
+      body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            gap: 15px;
+
+        }
+        img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding-left: 100px;
+        }
+      section {
+        display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
         height: 100vh;
       }
 
-       h1, h3 {
-            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-            background-size: 600% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: rainbow 3s ease infinite;
-            font-size: 2em; /* Ajustez selon vos besoins */
-        }
+      h1,
+      h3 {
+        background: linear-gradient(
+          90deg,
+          #ff0000,
+          #ff7f00,
+          #ffff00,
+          #00ff00,
+          #0000ff,
+          #4b0082,
+          #9400d3
+        );
+        background-size: 600% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: rainbow 3s ease infinite;
+        font-size: 2em; /* Ajustez selon vos besoins */
+      }
 
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+      @keyframes rainbow {
+        0% {
+          background-position: 0% 50%;
         }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
     </style>
   </head>
   <body>
     <section>
       <h1>Ce site est un fake</h1>
-      <h3>Merci de l'avoir tester cela soutien notre école merci</h3><span> 😊😊</span>
+      <h3>Merci de l'avoir tester cela soutien notre école merci</h3>
+      <span> 😊😊</span>
+      <img
+        src="https://media1.tenor.com/m/RdYowW9KtNMAAAAC/dancing-happy-dance.gif"
+        alt="Petite fille dansant joyeusement pour l'anniversaire"
+        width="468"
+        height="498"
+      />
     </section>
   </body>
 </html>

